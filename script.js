@@ -186,18 +186,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// Add this to your existing script.js
-function handleImageErrors() {
-  const images = document.getElementsByTagName('img');
-  for (let img of images) {
-    img.onerror = function() {
-      this.onerror = null; // Prevent infinite loop
-      this.src = '/images/fallback.jpg';
-      this.alt = 'Image not available';
-      this.classList.add('image-fallback');
-    };
-  }
-}
-
-// Call this function when the document loads
-document.addEventListener('DOMContentLoaded', handleImageErrors);
+// ... existing code ...

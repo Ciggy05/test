@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <!-- Removed CSP meta tag -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MyPersonal Portfolio</title>
 
@@ -12,15 +13,14 @@
   <!-- custom css link -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- Add error handling script -->
-  <script>
-    function handleImageError(img) {
-      console.error(`Failed to load image: ${img.src}`);
-      img.style.border = '2px solid red';
-    }
-  </script>
-
-  <!-- Rest of your head content -->
+  <!-- google font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
@@ -40,7 +40,7 @@
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-          <img src="/images/avatar.png" alt="Clinton Garcia" width="80" onerror="handleImageError(this)">
+          <img src="/images/avatar.png" alt="Clinton Garcia" width="80">
         </figure>
         
 
@@ -238,13 +238,7 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <!-- Service icons -->
-                <img src="/images/web.svg" alt="Web development" width="40" onerror="handleImageError(this)">
-                
-                <!-- Portfolio images -->
-                <figure class="project-img">
-                  <img src="/images/portfolio1.png" alt="Portfolio 1" loading="lazy" onerror="handleImageError(this)">
-                </figure>
+                <img src="/images/web.svg" alt="Web development" width="40">
               </div>
 
               <div class="service-content-box">
@@ -323,170 +317,193 @@
           <h2 class="h2 article-title">Resume</h2>
         </header>
 
+        <!-- Education Timeline -->
         <section class="timeline">
-          <div class="title-wrapper collapsible-trigger" data-section="education">
+          <div class="title-wrapper">
             <div class="icon-box">
               <ion-icon name="book-outline"></ion-icon>
             </div>
             <h3 class="h3">Education</h3>
           </div>
         
-          <ol class="timeline-list collapsible-content" data-section="education">
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Advance Central College</h4>
-
-              <span>2016 — 2020</span>
-
-              <p class="timeline-text">
-                I earned a Bachelor of Science in Information Systems, completing a comprehensive four-year program focused on technology, systems analysis, and business solutions.
+          <ol class="timeline-list">
+            <div class="timeline-content">
+              <p class="preview-text">
+                My educational journey includes a Bachelor's degree in Information Systems, TESDA certification, and foundational studies...
               </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Technical Education and Skill Development Authority (TESDA)</h4>
-
-              <span>2018 — 2018</span>
-
-              <p class="timeline-text">
-                I successfully completed my Virtual Graphic Design (VGD) NC III training with comprehensive results, gaining hands-on experience in design principles, digital illustration, branding, and layout techniques aligned with industry standards.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Dao Catholic high School</h4>
-
-              <span>2006 —2010</span>
-
-              <p class="timeline-text">
-                I completed my high school education in Tobias Fornier, Antique, where I gained valuable skills and experiences that helped shape my personal and professional growth.
-              </p>
-
-            </li>
-
+              <div class="expanded-content" style="display: none;">
+                <li class="timeline-item">
+                  <h4 class="h4 timeline-item-title">Advance Central College</h4>
+                  <span>2016 — 2020</span>
+                  <p class="timeline-text">
+                    I earned a Bachelor of Science in Information Systems, completing a comprehensive four-year program focused on technology, systems analysis, and business solutions.
+                  </p>
+                </li>
+        
+                <li class="timeline-item">
+                  <h4 class="h4 timeline-item-title">Technical Education and Skill Development Authority (TESDA)</h4>
+                  <span>2018 — 2018</span>
+                  <p class="timeline-text">
+                    I successfully completed my Virtual Graphic Design (VGD) NC III training with comprehensive results, gaining hands-on experience in design principles, digital illustration, branding, and layout techniques aligned with industry standards.
+                  </p>
+                </li>
+        
+                <li class="timeline-item">
+                  <h4 class="h4 timeline-item-title">Dao Catholic high School</h4>
+                  <span>2006 —2010</span>
+                  <p class="timeline-text">
+                    I completed my high school education in Tobias Fornier, Antique, where I gained valuable skills and experiences that helped shape my personal and professional growth.
+                  </p>
+                </li>
+              </div>
+              <a href="#" class="read-more" style="color: #46ff26;">Read More</a>
+            </div>
           </ol>
-
         </section>
-
+        
+        <!-- Remove all existing script tags from within the article sections -->
+        
+        <!-- Add this just before the closing </body>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          document.querySelectorAll('.read-more').forEach(button => {
+            button.addEventListener('click', function(e) {
+              e.preventDefault();
+              const content = this.previousElementSibling;
+              const preview = this.parentElement.querySelector('.preview-text');
+              
+              if (content.style.display === 'none') {
+                content.style.display = 'block';
+                preview.style.display = 'none';
+                this.textContent = 'Read Less';
+              } else {
+                content.style.display = 'none';
+                preview.style.display = 'block';
+                this.textContent = 'Read More';
+              }
+            });
+          });
+        });
+        </script>
+        
+        <!-- Experience Timeline -->
         <section class="timeline">
-          <div class="title-wrapper collapsible-trigger" data-section="experience">
+          <div class="title-wrapper">
             <div class="icon-box">
               <ion-icon name="build-outline"></ion-icon>
             </div>
             <h3 class="h3">Experience</h3>
           </div>
         
-          <ol class="timeline-list collapsible-content" data-section="experience">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Data Encoder VIII</h4>
-
-              <span>2022 — 2025</span>
-
-              <p class="timeline-text">
-                Developed and managed an efficient inventory system for provincial equipment and inventory at Provincial General Services Office, ensuring accurate tagging, documentation, and providing administrative support for smooth operations.
+          <ol class="timeline-list">
+            <div class="timeline-content">
+              <p class="preview-text">
+                My professional journey includes roles in data management, IT support, and administrative work...
               </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Freelancer</h4>
-
-              <span>2022 — 2022</span>
-
-              <p class="timeline-text">
-                Provided freelance IT support and data entry services, specializing in troubleshooting and debugging systems for thesis projects. Delivered tailored IT solutions, including website development and inventory systems for businesses, ensuring efficient and effective technology support for various clients.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Administrative Aide II 2020-2021</h4>
-
-              <span>2020 — 2021</span>
-
-              <p class="timeline-text">
-                Managed data entry, provided technical support, and organized recipient files for the LAG Program at Department of Social Welfare and Development, ensuring smooth and efficient office operations.”
-              </p>
-
-            </li>
-
+              <div class="expanded-content" style="display: none;">
+                <li class="timeline-item">
+                  <h4 class="h4 timeline-item-title">Data Encoder VIII</h4>
+                  <span>2022 — 2025</span>
+                  <p class="timeline-text">
+                    Developed and managed an efficient inventory system for provincial equipment and inventory at Provincial General Services Office, ensuring accurate tagging, documentation, and providing administrative support for smooth operations.
+                  </p>
+                </li>
+        
+                <li class="timeline-item">
+                  <h4 class="h4 timeline-item-title">Freelancer</h4>
+                  <span>2022 — 2022</span>
+                  <p class="timeline-text">
+                    Provided freelance IT support and data entry services, specializing in troubleshooting and debugging systems for thesis projects. Delivered tailored IT solutions, including website development and inventory systems for businesses, ensuring efficient and effective technology support for various clients.
+                  </p>
+                </li>
+        
+                <li class="timeline-item">
+                  <h4 class="h4 timeline-item-title">Administrative Aide II</h4>
+                  <span>2020 — 2021</span>
+                  <p class="timeline-text">
+                    Managed data entry, provided technical support, and organized recipient files for the LAG Program at Department of Social Welfare and Development, ensuring smooth and efficient office operations.
+                  </p>
+                </li>
+              </div>
+              <a href="#" class="read-more" style="color: #46ff26;">Read More</a>
+            </div>
           </ol>
-
         </section>
 
+        <!-- Update the Certificates Section -->
         <section class="skill">
-          <div class="title-wrapper collapsible-trigger" data-section="certificates">
+          <div class="title-wrapper">
             <div class="icon-box">
               <ion-icon name="ribbon-outline"></ion-icon>
             </div>
             <h3 class="h3 skills-title">Certificates</h3>
           </div>
-        
-          <ul class="skills-list content-card collapsible-content" data-section="certificates">
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Visual Graphic Design NCII</h5>
-                <span>2018</span>
-              </div>
-            </li>
 
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Ethical Hacking: Crypto 101</h5>
-                <span>2023</span>
-              </div>
-            </li>
+          <div class="timeline-content">
+            <p class="preview-text">
+              My certifications span across various domains including design, development, language proficiency, and professional management...
+            </p>
+            <div class="expanded-content" style="display: none;">
+              <ul class="skills-list content-card">
+                <li class="skills-item">
+                  <div class="title-wrapper">
+                    <h5 class="h5">Visual Graphic Design NCII</h5>
+                    <span>2018</span>
+                  </div>
+                </li>
 
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">CSS and JavaScript</h5>
-                <span>2024</span>
-              </div>
-            </li>
+                <li class="skills-item">
+                  <div class="title-wrapper">
+                    <h5 class="h5">Ethical Hacking: Crypto 101</h5>
+                    <span>2023</span>
+                  </div>
+                </li>
 
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Web Development with CSS and HTML</h5>
-                <span>2024</span>
-              </div>
-            </li>
+                <li class="skills-item">
+                  <div class="title-wrapper">
+                    <h5 class="h5">CSS and JavaScript</h5>
+                    <span>2024</span>
+                  </div>
+                </li>
 
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">EF SET English Certificate</h5>
-                <span>62/100 (C1 Advanced) 2025</span>
-              </div>
-            </li>
+                <li class="skills-item">
+                  <div class="title-wrapper">
+                    <h5 class="h5">Web Development with CSS and HTML</h5>
+                    <span>2024</span>
+                  </div>
+                </li>
 
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">CEFR C2 | goFluent C2</h5>
-                <span>2025</span>
-              </div>
-            </li>
+                <li class="skills-item">
+                  <div class="title-wrapper">
+                    <h5 class="h5">EF SET English Certificate</h5>
+                    <span>62/100 (C1 Advanced) 2025</span>
+                  </div>
+                </li>
 
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">AI-Powered Content Creation with ChatGPT</h5>
-                <span>Master ChatGPT 2025</span>
-              </div>
-            </li>
+                <li class="skills-item">
+                  <div class="title-wrapper">
+                    <h5 class="h5">CEFR C2 | goFluent C2</h5>
+                    <span>2025</span>
+                  </div>
+                </li>
 
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">CPMM – Certified Professional Marketing Manager</h5>
-                <span>2025</span>
-              </div>
-            </li>
-          </ul>
+                <li class="skills-item">
+                  <div class="title-wrapper">
+                    <h5 class="h5">AI-Powered Content Creation with ChatGPT</h5>
+                    <span>Master ChatGPT 2025</span>
+                  </div>
+                </li>
+
+                <li class="skills-item">
+                  <div class="title-wrapper">
+                    <h5 class="h5">CPMM – Certified Professional Marketing Manager</h5>
+                    <span>2025</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <a href="#" class="read-more" style="color: #46ff26;">Read More</a>
+          </div>
         </section>
 
       </article>
@@ -603,12 +620,7 @@
             <li class="project-item  active" data-filter-item data-category="applications">
               <a href="#">
                 <figure class="project-img">
-                  <img 
-                    src="/images/portfolio1.png" 
-                    alt="Portfolio 1" 
-                    loading="lazy"
-                    onerror="this.onerror=null; this.src='/images/fallback.jpg'; this.alt='Image not available'"
-                  >
+                  <img src="images/portfolio3.png" alt="Portfolio 3" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">Inventory System</h3>
@@ -696,5 +708,12 @@
   -->
   <script src="script.js"></script>
 
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </body>
+
 </html>

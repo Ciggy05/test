@@ -216,12 +216,11 @@
 
         <section class="about-text">
           <p>
-            I’m Clinton Garcia, a web developer with a background in Information Systems and experience in both design and development. I specialize in creating clean, user-friendly websites that not only function smoothly but also communicate brand identity effectively. 
+            I’m Clinton Garcia, a web developer with a background in Information Systems. 
+            I design and build responsive, user-friendly websites that combine clean UI/UX with efficient front-end development. 
+            My purpose is to turn ideas into engaging digital experiences that not only look great but also perform seamlessly and reflect each brand’s unique identity.
           </p>
 
-          <p>
-            My goal is to turn ideas into engaging digital experiences—combining intuitive UI/UX with performance-focused web solutions. I enjoy solving complex problems and translating them into elegant, responsive websites. I’ve also collaborated on both business and creative projects, applying best practices in front-end development to help brands stand out online.
-          </p>
         </section>
 
 
@@ -235,12 +234,11 @@
 
           <ul class="service-list">
 
+            <!-- Replace service icons with ion-icons -->
             <li class="service-item">
-
               <div class="service-icon-box">
-                <img src="/images/web.svg" alt="Web development" width="40">
+                <ion-icon name="code-outline"></ion-icon>
               </div>
-
               <div class="service-content-box">
                 <h4 class="h4 service-item-title">Web development</h4>
 
@@ -248,15 +246,13 @@
                   Modern, high-quality websites built with functionality, speed, and style in mind.
                 </p>
               </div>
-
             </li>
 
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="images/print.svg" alt="Printing Shop icon" width="40">
+                <ion-icon name="print-outline"></ion-icon>
               </div>
-
               <div class="service-content-box">
                 <h4 class="h4 service-item-title">Printing Shop</h4>
 
@@ -270,9 +266,8 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="images/graphics.svg" alt="Graphic Design icon" width="40">
+                <ion-icon name="brush-outline"></ion-icon>
               </div>
-
               <div class="service-content-box">
                 <h4 class="h4 service-item-title">Graphic Design</h4>
 
@@ -286,9 +281,8 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="images/photo.svg" alt="camera icon" width="40">
+                <ion-icon name="camera-outline"></ion-icon>
               </div>
-
               <div class="service-content-box">
                 <h4 class="h4 service-item-title">Photography</h4>
 
@@ -548,11 +542,13 @@
 
             <button class="filter-select" data-select>
 
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
+              <!-- Fix the typo in data-selecct-value -->
+              <button class="filter-select" data-select>
+                <div class="select-value" data-select-value>Select category</div>
+                <div class="select-icon">
+                  <ion-icon name="chevron-down"></ion-icon>
+                </div>
+              </button>
 
             </button>
 

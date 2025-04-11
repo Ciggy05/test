@@ -1477,7 +1477,11 @@ textarea.form-input::-webkit-resizer { display: none; }
   .sidebar.active { max-height: 584px; }
 
   .sidebar-info { gap: 25px; }
-
+  .avatar-icon {
+    font-size: 80px;
+    color: var(--orange-yellow-crayola);
+    --ionicon-stroke-width: 30px;
+  }
   .avatar-box { border-radius: 30px; }
 
   .avatar-box img { width: 120px; }
